@@ -12,63 +12,78 @@ var userNameQuestion = function(){
 };
 
 //Cats Question
-var petsQuestion = function(){
-  var pets = prompt('Does Evy like cats?').toLowerCase();
-  if(pets === 'yes'){
-    alert('Definitely! I love cats!');
+var catsQuestion = function(){
+  var cats;
+  do {
+    cats = prompt('Does Evy like cats?').toLowerCase();
+  } while(cats !== 'yes' && cats !== 'no');
+
+  if(cats === 'yes'){
+    alert('Correct! I love cats!');
     correctAns++;
   } else {
-    alert('What sad soul doesn\'t like cats?');
+    alert ('Incorrect. What sad soul doesn\'t like cats?');
   }
-  console.log(userName + ' answered ' + pets);
 };
 
 //Shakespeare Question
 var shakespeareQuestion = function(){
-  var shakespeare = prompt('Can Evy recite Shakespeare\'s Sonnet 18 from memory?').toLowerCase();
+  var shakespeare;
+  do {
+    shakespeare = prompt('Can Evy recite Shakespeare\'s Sonnet 18 from memory?').toLowerCase();
+  } while(shakespeare !== 'yes' && shakespeare !== 'no');
+
   if(shakespeare === 'yes'){
-    alert('I had to memorize it in 8th grade an it just won\'t leave');
+    alert('Correct! I had to memorize it in 8th grade an it just won\'t leave.');
     correctAns++;
   } else {
-    alert('I can. Ahh, those things your brain never lets go of...');
+    alert ('Incorrect. I can. Ahh, those things your brain never lets go of...');
   }
-  console.log(userName + ' answered ' + shakespeare);
 };
 
 //books Question
 var booksQuestion = function(){
-  var books = prompt('Does Evy like to re-read books?').toLowerCase();
-  if(books === 'yes'){
-    alert('Incorrect! I wish I could say I do...');
-  } else {
-    alert('Correct! There is just so much out there to read!');
+  var books;
+  do {
+    books = prompt('Does Evy like to re-read books?').toLowerCase();
+  } while(books !== 'yes' && books !== 'no');
+
+  if(books === 'no'){
+    alert ('Correct! There is just so much out there to read!');
     correctAns++;
+  } else {
+    alert('Incorrect! I wish I could say I do...');
   }
-  console.log(userName + ' answered ' + books);
 };
 
 //Sand Castle Question
 var sandCastleQuestion = function(){
-  var sandCastle = prompt('Has Evy competed in a sand castle building competition?').toLowerCase();
+  var sandCastle;
+  do {
+    sandCastle = prompt('Has Evy competed in a sand castle building competition?').toLowerCase();
+  } while(sandCastle !== 'yes' && sandCastle !== 'no');
+
   if(sandCastle === 'yes'){
-    alert('Twice, even!');
+    alert('Correct! Twice, even!');
     correctAns++;
-  }else{
-    alert('Unexpected, but true');
+  } else {
+    alert ('Incorrect.It\'s Unexpected, but true');
   }
-  console.log(userName + ' answered ' + sandCastle);
 };
 
 //Marathon Question
 var marathonQuestion = function(){
-  var marathon = prompt('Has Evy ran a marathon?').toLowerCase();
-  if(marathon === 'yes'){
-    alert('Correct. The longest I\'ve run is a half marathon');
-  }else{
-    alert('Absolutely not! That is such a long time to just be running!');
+  var marathon;
+  do {
+    marathon = prompt('Has Evy ran a marathon?').toLowerCase();
+  } while(marathon !== 'yes' && marathon !== 'no');
+
+  if(marathon === 'no'){
+    alert('Correct! The longest I\'ve run is a half marathon.');
     correctAns++;
+  } else {
+    alert ('Incorrect! I most definitely not!');
   }
-  console.log(userName + ' answered ' + marathon);
 };
 
 //Continents Question
@@ -80,9 +95,9 @@ var continentsQuestion = function(){
       alert('Correct!');
       correctAns++;
       break;
-    }if(guess < '3'){
+    } if (guess < '3'){
       alert('Your guess is too low! Try again!');
-    }if(guess > '3'){
+    } if (guess > '3'){
       alert('Your guess is too high! Try again!');
     }
   }
@@ -94,19 +109,20 @@ var herbsQuestion = function(){
   var herbs = ['basil', 'oregano', 'parsley', 'rosemary'];
   for(var attempts = 0; attempts < 6; attempts++){
     var guess = prompt('What kind of herbs are in my garden?').toLowerCase();
-    if(herbs.includes(guess)){
-      alert('You are correct!');
+    if (herbs.includes(guess)){
+      alert('Correct!');
       correctAns++;
       break;
-    }else{
+    } else {
       alert('Try again!');
     }
   }
   console.log(userName + ' answered ' + guess);
+  alert('I have basil, oregano, parsley, and rosemary in my garden!');
 };
 
 userNameQuestion();
-petsQuestion();
+catsQuestion();
 shakespeareQuestion();
 booksQuestion();
 sandCastleQuestion();
